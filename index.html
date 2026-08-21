@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Web Video Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Simple Web Video Editor</h1>
+  </header>
+
+  <main>
+    <section id="project">
+      <input id="projectName" placeholder="Project name" />
+      <button id="newProject">Create New Project</button>
+      <button id="saveProject">Save Project (download .json)</button>
+      <input id="loadProjectFile" type="file" accept=".json" />
+    </section>
+
+    <section id="assets">
+      <div class="asset">
+        <label>Video</label>
+        <input id="videoFile" type="file" accept="video/*" />
+      </div>
+      <div class="asset">
+        <label>Image (overlay)</label>
+        <input id="imageFile" type="file" accept="image/*" />
+      </div>
+      <div class="asset">
+        <label>Music / Audio</label>
+        <input id="audioFile" type="file" accept="audio/*" />
+      </div>
+    </section>
+
+    <section id="controls">
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <button id="export">Export / Save Video</button>
+    </section>
+
+    <section id="editor">
+      <canvas id="preview" width="960" height="540"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <small>Exports are recorded client-side (uses MediaRecorder). For large exports use smaller resolution or a server-side encoder.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
